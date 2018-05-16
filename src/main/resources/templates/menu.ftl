@@ -10,6 +10,7 @@
         <li class="nav-item active"><a class="nav-link" href="/">Главная</a></li>
         <li class="nav-item active"><a class="nav-link" href="/user/${currentUser.id}">Профиль</a></li>
         <li class="nav-item active"><a class="nav-link" href="/tags">Предпочтения</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/events">Мероприятия</a></li>
     </#if>
     </ul>
         <#if currentUser??>
