@@ -29,6 +29,16 @@ CREATE TABLE user_tag (
 );
 
 CREATE TABLE event_tag (
-  user_id  bigint REFERENCES users (id),
+  tag_id  bigint REFERENCES tag (id),
   event_id bigint REFERENCES event (id)
 );
+
+CREATE TABLE user_friend (
+  user_id  bigint REFERENCES users (id),
+  friend_id bigint REFERENCES users (id)
+);
+
+CREATE TABLE user_event (
+  user_id  bigint REFERENCES users (id),
+  event_id bigint REFERENCES event (id)
+)

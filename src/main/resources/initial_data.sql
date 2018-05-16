@@ -10,8 +10,8 @@ insert into tag (tag_name) values ('кино');
 insert into tag (tag_name) values ('театр');
 insert into tag (tag_name) values ('выставка');
 
-insert into user_tag (user_id, tags_id) VALUES (1, 1),
-  (1, 2);
+insert into user_tag (user_id, tags_id) VALUES (1, 1), (1, 2);
+insert into user_tag (user_id, tags_id) VALUES (2, 2), (2, 3);
 
 insert into event (name, description, start_date, end_date, address, image_url, status)
     VALUES ('Защита проекта', '19 мая состоится презентация проекта Entertainment Adviser',
