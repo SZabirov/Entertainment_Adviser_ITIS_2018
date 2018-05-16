@@ -6,6 +6,14 @@ VALUES ('user1', 'user1', 'Александр', 'Пушкин', 'USER');
 INSERT INTO users (username, password, firstname, secondname, role)
 VALUES ('user2', 'user2', 'Александр', 'Герцен', 'USER');
 
+INSERT INTO users (username, password, firstname, secondname, role)
+VALUES ('user3', 'user3', 'Михаил', 'Булагаков', 'USER');
+
+INSERT INTO users (username, password, firstname, secondname, role)
+VALUES ('user4', 'user4', 'Федор', 'Достоевский', 'USER');
+
+INSERT INTO user_friend (user_id, friend_id) VALUES (1, 3), (1, 5);
+
 insert into tag (tag_name) values ('кино');
 insert into tag (tag_name) values ('театр');
 insert into tag (tag_name) values ('выставка');
