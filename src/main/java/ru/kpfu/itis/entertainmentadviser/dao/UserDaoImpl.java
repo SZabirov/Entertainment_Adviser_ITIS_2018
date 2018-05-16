@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import ru.kpfu.itis.entertainmentadviser.model.User;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -28,5 +29,29 @@ public class UserDaoImpl implements UserDao {
         namedParameters.put("username", username);
         User user = namedParameterJdbcTemplate.queryForObject(sqlQuery, namedParameters, userRowMapper);
         return user;
+    }
+
+    @Override
+    public List<User> showProfile(Long id) {
+        String sqlQuery = "SELECT * FROM users WHERE id = :id";
+        User ProfileOfUser = findById(id);
+        Map namedParameters = new HashMap();
+        namedParameters.put("id", id);
+        List <User> endlessProfile = namedParameterJdbcTemplate.query(sqlQuery,namedParameters,userRowMapper);
+        return endlessProfile;
+    }
+
+    @Override
+    public List<User> update(String username,String firstname,String secondname,Long id) {
+        String sqlQuery = "UPDATE users " +
+                "SET username = :username, firstname = :firstname, secondname = :secondname " +
+                "WHERE id = :id";
+        Map namedParameters = new HashMap();
+        namedParameters.put("id", id);
+        namedParameters.put("firstname",firstname);
+        namedParameters.put("username",username);
+        namedParameters.put("secondname",secondname);
+        namedParameterJdbcTemplate.update(sqlQuery,namedParameters);
+        return null;
     }
 }

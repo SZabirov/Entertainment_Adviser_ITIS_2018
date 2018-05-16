@@ -8,13 +8,13 @@
 <body>
 <#include "menu.ftl">
 <div class="container">
-    <form>
+    <form action="/tags" method="post">
+        <#include "csrf.ftl">
         <#list userTagList as userTag>
             <label for="userTag">${userTag.tagName}</label>
-            <input type="checkbox" value="${userTag.id}" id="userTag"
+            <input type="checkbox" name="userTag" value="${userTag.id}" id="userTag"
             <#if userTag.getChosen()??> <#if userTag.getChosen()> checked</#if> </#if>
             >
-
         </#list>
         <button type="submit">Сохранить</button>
     </form>
