@@ -35,6 +35,7 @@
 <body>
 <#include "menu.ftl">
 <div class="container">
+    <h1>Мероприятия</h1>
 <form action="/events" method="get">
     <#list getAllevents as Event>
     <div id="glaw">

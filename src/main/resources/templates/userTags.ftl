@@ -8,6 +8,7 @@
 <body>
 <#include "menu.ftl">
 <div class="container">
+    <h1>Мои теги</h1>
     <form action="/tags" method="post">
         <#include "csrf.ftl">
         <#list userTagList as userTag>
