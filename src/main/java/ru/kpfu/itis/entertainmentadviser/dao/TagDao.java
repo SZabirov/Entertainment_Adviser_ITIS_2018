@@ -1,5 +1,6 @@
 package ru.kpfu.itis.entertainmentadviser.dao;
 
+import ru.kpfu.itis.entertainmentadviser.model.Event;
 import ru.kpfu.itis.entertainmentadviser.model.User;
 import ru.kpfu.itis.entertainmentadviser.model.UserTag;
 
@@ -11,4 +12,5 @@ public interface TagDao {
     UserTag findById(Long id);
     void addTagToUser(User user, UserTag userTag);
     void deleteTagForUser(User user, UserTag userTag);
+    List<UserTag> findUserTagsByEvent(Event event);
 }

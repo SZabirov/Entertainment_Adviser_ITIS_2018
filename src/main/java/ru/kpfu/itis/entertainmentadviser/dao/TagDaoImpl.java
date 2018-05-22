@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import ru.kpfu.itis.entertainmentadviser.model.Event;
 import ru.kpfu.itis.entertainmentadviser.model.User;
 import ru.kpfu.itis.entertainmentadviser.model.UserTag;
 
@@ -58,5 +59,14 @@ public class TagDaoImpl implements TagDao{
         namedParameters.put("userId", user.getId());
         namedParameters.put("tagId", userTag.getId());
         namedParameterJdbcTemplate.update(sqlQuery, namedParameters);
+    }
+
+    @Override
+    public List<UserTag> findUserTagsByEvent(Event event) {
+        String sqlQuery = "SELECT t.* FROM tag t, event_tag et where t.id = et.tag_id AND et.event_id = :eventId";
+        Map namedParameters = new HashMap();
+        namedParameters.put("eventId", event.getId());
+        List<UserTag> userTagList = namedParameterJdbcTemplate.query(sqlQuery, namedParameters, userTagRowMapper);
+        return userTagList;
     }
 }

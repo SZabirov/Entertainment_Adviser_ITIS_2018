@@ -17,6 +17,11 @@ INSERT INTO user_friend (user_id, friend_id) VALUES (1, 3), (1, 5);
 insert into tag (tag_name) values ('кино');
 insert into tag (tag_name) values ('театр');
 insert into tag (tag_name) values ('выставка');
+insert into tag (tag_name) values ('обучение');
+insert into tag (tag_name) values ('университет');
+insert into tag (tag_name) values ('праздник');
+insert into tag (tag_name) values ('фестиваль');
+insert into tag (tag_name) values ('литература');
 
 insert into user_tag (user_id, tags_id) VALUES (1, 1), (1, 2);
 insert into user_tag (user_id, tags_id) VALUES (2, 2), (2, 3);
@@ -32,3 +37,9 @@ VALUES ('День Победы', '9 мая состоится презентац
         '2018-05-19 13:00:00'::timestamp, '2018-05-19 17:00:00'::timestamp,
         'Цирк/Площадь Тысячелетия', 'http://krasnosel.caoinform.ru/wp-content/uploads/sites/5/2018/04/feyerverk-300x200.jpg',
         'Окончено');
+
+insert into event (name, description, start_date, end_date, address, image_url, status)
+VALUES ('Летний книжный фестиваль', 'Центральным событием фестиваля станет книжная ярмарка. В ней примут участие несколько десятков крупных и малых интеллектуальных российских издательств и книготорговых компаний.',
+        '2018-06-10 17:00:00'::timestamp, '2018-06-15 17:00:00'::timestamp,
+        'Черное озеро', 'https://afisha.yandex.ru/21Gy17/e6768anyi/nOFo/rlmSJ_Hw/N9XlEznr/xJCK/DEZUFLuj/Rkiu/CImtPR/9scPvF4A/fz/n6VI43R/0uTv4/_NZmKI/WN2LV0Dz/HUlY8Zt/4i4b/c4t63u5/4T_Y/zVNQlojUjz/EPLGX-/izw',
+        'Предстоит');

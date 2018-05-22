@@ -35,7 +35,16 @@
 <body>
 <#include "menu.ftl">
 <div class="container">
-    <h1>Мероприятия</h1>
+    <div class="row">
+        <div class="col-md-10" >
+        <h1>Мероприятия</h1>
+        </div>
+        <div class="col-md-2">
+            <form class="form-inline my-2 my-lg-0" action="/myevents" method="get" style="padding: 8px 16px 8px 16px">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Подобрать мероприятия</button>
+            </form>
+        </div>
+    </div>
 <form action="/events" method="get">
     <#list getAllevents as Event>
     <div id="glaw">

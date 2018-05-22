@@ -12,12 +12,13 @@
     <form action="/tags" method="post">
         <#include "csrf.ftl">
         <#list userTagList as userTag>
-            <label for="userTag">${userTag.tagName}</label>
-            <input type="checkbox" name="userTag" value="${userTag.id}" id="userTag"
+        <div class="form-group">
+            <input type="checkbox" class="form-check-input" name="userTag" value="${userTag.id}" id="userTag${userTag.id}"
             <#if userTag.getChosen()??> <#if userTag.getChosen()> checked</#if> </#if>
-            >
+            ><label for="userTag${userTag.id}">${userTag.tagName}</label><br>
+        </div>
         </#list>
-        <button type="submit">Сохранить</button>
+        <button type="submit"  class="btn btn-primary">Сохранить</button>
     </form>
 </div>
 </body>
